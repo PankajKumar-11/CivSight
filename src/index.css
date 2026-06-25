@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #F2EDE8;
+  --foreground: #1C1C1E;
+}
+
+@theme {
+  --color-stone: #F2EDE8;
+  --color-warm-white: #FAFAF8;
+  --color-charcoal: #1C1C1E;
+  --color-mid: #4A4A4C;
+  --color-dust: #9A9A9C;
+  --color-hairline: #D8D3CE;
+  --color-dark-border: #2A2A2E;
+  --color-amber: #C8873A;
+  --color-amber-light: #F5E6D3;
+  --color-amber-dark: #A06828;
+  --color-critical: #B03A2E;
+  --color-high: #C87533;
+  --color-low: #7A8C5E;
+  --color-resolved: #3D6B4F;
+
+  --font-serif: 'DM Serif Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Remove all drop shadows, enforce flat aesthetic */
+.shadow-soft, .shadow-premium, .shadow-drawer, .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl {
+  box-shadow: none !important;
+}
+
+/* Enforce near-zero radius globally with exact exceptions (4px for thumbs/chips/AI cards) */
+.rounded-lg, .rounded-xl, .rounded-2xl, .rounded-3xl, .rounded-md {
+  border-radius: 0px !important;
+}
+
+.rounded-chip {
+  border-radius: 4px !important;
+}
+
+/* Hairline separation rules */
+.border-hairline {
+  border-color: #D8D3CE;
+  border-width: 0.4px;
+}
+
+/* Smooth transitions & animations */
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out forwards;
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8D3CE;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9A9A9C;
+}
+
+/* Hide scrollbars but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Map specific styling overrides */
+.map-dot-pulse {
+  position: relative;
+}
+
+.map-dot-pulse::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.15;
+  animation: map-pulse 2s infinite;
+}
+
+@keyframes map-pulse {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+  }
+  100% {
+    width: 250%;
+    height: 250%;
+    opacity: 0;
+  }
+}
