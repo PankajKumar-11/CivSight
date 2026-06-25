@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const PORT = Number(process.env.PORT) || 3000;
+const PORT = 3000;
 
 // Increase request limit for large base64 image uploads
 app.use(express.json({ limit: '50mb' }));
@@ -191,7 +191,7 @@ function getInsightsFallback(stats: any) {
       ? `SLA breaches will compound if active work orders are not fulfilled within the next 48 hours.`
       : `Waste overflow may increase on pedestrian walkways if collection schedules are delayed.`,
     generatedAt: new Date().toISOString(),
-    model: 'gemini-2.5-flash (Simulated Fallback)'
+    model: 'gemini-3.5-flash (Simulated Fallback)'
   };
 }
 
@@ -233,7 +233,7 @@ Be specific and realistic. Consider Indian urban context.`;
 
     console.log('[CivSight Vision] Analyzing image...');
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3.5-flash',
       contents: [
         prompt,
         {
@@ -327,7 +327,7 @@ Rules:
 
     console.log('[CivSight Chat] Generating assistant reply...');
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3.5-flash',
       contents: prompt
     });
 
@@ -386,7 +386,7 @@ Rules:
 
     console.log('[CivSight Insights] Generating city intelligence data...');
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3.5-flash',
       contents: prompt,
       config: {
         responseMimeType: 'application/json'
@@ -406,7 +406,7 @@ Rules:
       topRiskDepartment: parsed.topRiskDepartment || '',
       predictedEscalation: parsed.predictedEscalation || '',
       generatedAt: new Date().toISOString(),
-      model: 'gemini-2.5-flash'
+      model: 'gemini-3.5-flash'
     });
 
   } catch (error: any) {
@@ -486,7 +486,7 @@ Respond ONLY with a valid JSON object (no markdown, no code blocks, no trailing 
 
     console.log('[CivSight Verification] Analyzing before/after images with Gemini...');
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3.5-flash',
       contents: [
         prompt,
         {
