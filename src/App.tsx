@@ -2914,7 +2914,7 @@ export default function Home() {
       </header>
 
       {/* Main Workspace Frame */}
-      <div className="flex-1 flex flex-col overflow-hidden relative h-full">
+      <div className={`flex-1 flex flex-col overflow-hidden relative min-h-0 ${isReportOpen || chatOpen ? 'z-20' : 'z-0'}`}>
 
         {/* ── Demo Mode Banner ── */}
         {isDemoBannerVisible && (
@@ -3042,17 +3042,17 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Mobile Walkthrough Quest Widget */}
-        <div className="block md:hidden shrink-0 z-10">
-          {renderWalkthroughWidget(true)}
-        </div>
-
         {/* Main Content Workspace */}
-        <main className={`flex-1 p-3.5 sm:p-5 md:p-6 h-full flex flex-col gap-4 md:gap-6 no-scrollbar ${activeTab === 'map' ? 'overflow-hidden' : 'overflow-y-auto'}`}>
+        <main className={`flex-1 p-3.5 sm:p-5 md:p-6 min-h-0 flex flex-col gap-4 md:gap-6 no-scrollbar overflow-y-auto ${activeTab === 'map' ? 'md:overflow-hidden' : ''}`}>
+
+          {/* Mobile Walkthrough Quest Widget */}
+          <div className="block md:hidden shrink-0 z-10">
+            {renderWalkthroughWidget(true)}
+          </div>
 
           {/* TAB 1: Live Map View */}
           {activeTab === 'map' && (
-            <div className="flex-1 flex flex-col lg:flex-row gap-4 md:gap-6 h-full min-h-0">
+            <div className="flex-1 flex flex-col lg:flex-row gap-4 md:gap-6 lg:h-full lg:min-h-0">
 
               {/* Map block */}
               <div className="flex-1 relative h-[45vh] lg:h-full min-h-0 shrink-0 lg:shrink">
@@ -3068,7 +3068,7 @@ export default function Home() {
               </div>
 
               {/* Recent reported issues list side panel */}
-              <div className="w-full lg:w-[360px] flex flex-col bg-warm-white border border-hairline shadow-none shrink-0 min-h-0 lg:h-full overflow-hidden rounded-none flex-1 lg:flex-initial">
+              <div className="w-full lg:w-[360px] h-[400px] lg:h-full flex flex-col bg-warm-white border border-hairline shadow-none shrink-0 lg:min-h-0 overflow-hidden rounded-none flex-1 lg:flex-initial">
                 <div className="p-4.5 border-b border-hairline flex items-center justify-between bg-stone/20">
                   <h3 className="font-bold text-charcoal flex items-center gap-2 text-xs uppercase tracking-wider">
                     <List className="w-4 h-4 text-[#C8873A]" />
@@ -4044,7 +4044,7 @@ export default function Home() {
         {isReportOpen && (
           <div
             onClick={handleReportOverlayClick}
-            className="absolute inset-0 bg-charcoal/20 backdrop-blur-xs z-30 flex items-center justify-center p-4 animate-fade-in animate-in duration-200"
+            className="absolute inset-0 bg-charcoal/20 backdrop-blur-xs z-30 flex justify-center items-start overflow-y-auto p-4 md:py-8 animate-fade-in animate-in duration-200"
           >
             <div className="w-full max-w-lg bg-warm-white rounded-none shadow-none flex flex-col overflow-hidden max-h-[90vh] text-left border border-hairline animate-in zoom-in-95 duration-200">
 
