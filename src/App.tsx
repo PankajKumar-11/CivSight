@@ -865,7 +865,7 @@ export default function Home() {
           ? `SLA breaches will compound if active work orders are not fulfilled within the next 48 hours.`
           : `Waste overflow may increase on pedestrian walkways if collection schedules are delayed.`,
         generatedAt: new Date().toISOString(),
-        model: "gemini-3.5-flash (Fallback Simulation)"
+        model: "gemini-2.5-flash (Fallback Simulation)"
       });
     } finally {
       setIsGeneratingInsights(false);
@@ -1000,7 +1000,7 @@ export default function Home() {
     (issues || []).forEach(issue => {
       if (!issue) return;
       const base = new Date(issue.createdAt || Date.now()).getTime();
-      events.push({ id: `${issue.id}-a1`, timestamp: new Date(base + 2000).toISOString(), agentName: 'Agent 1: Vision Classifier', agentNum: 1, action: `Classified: ${(issue.category || 'other').replace('_', ' ')} · Severity ${issue.severity}/10 · Confidence ~92%`, issueId: issue.id, status: 'success', model: 'gemini-3.5-flash' });
+      events.push({ id: `${issue.id}-a1`, timestamp: new Date(base + 2000).toISOString(), agentName: 'Agent 1: Vision Classifier', agentNum: 1, action: `Classified: ${(issue.category || 'other').replace('_', ' ')} · Severity ${issue.severity}/10 · Confidence ~92%`, issueId: issue.id, status: 'success', model: 'gemini-2.5-flash' });
       if (['verified', 'assigned', 'in_progress', 'resolved'].includes(issue.status)) {
         events.push({ id: `${issue.id}-a3`, timestamp: new Date(base + 12000).toISOString(), agentName: 'Agent 3: Community Validation', agentNum: 3, action: `Validated by ${issue.confirmations || 1} community nodes`, issueId: issue.id, status: 'success' });
       }
@@ -1766,7 +1766,7 @@ export default function Home() {
               agentNum: agentNums[updatedStep.agentName] || 0,
               action: updatedStep.logs[updatedStep.logs.length - 1] || updatedStep.agentName,
               status: updatedStep.status === 'merged' ? 'merged' : 'success',
-              model: updatedStep.agentName.includes('Vision') ? 'gemini-3.5-flash' : undefined
+              model: updatedStep.agentName.includes('Vision') ? 'gemini-2.5-flash' : undefined
             });
           }
         },
@@ -3037,7 +3037,7 @@ export default function Home() {
               </span>
             </div>
             <span className="hidden lg:flex ml-auto items-center gap-1.5 text-dust shrink-0">
-              <Sparkles className="w-3 h-3 text-[#C8873A]" />Powered by Gemini 2.0 Flash · Google Maps · Firebase
+              <Sparkles className="w-3 h-3 text-[#C8873A]" />Powered by Gemini 2.5 Flash · Google Maps · Firebase
             </span>
           </div>
         </div>
@@ -3181,7 +3181,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-[9px] font-mono text-[#9C6EDB] bg-[#9C6EDB]/10 border border-[#9C6EDB]/30 px-2 py-0.5 rounded-full select-none flex items-center gap-1">
-                      <Sparkles className="w-2.5 h-2.5" /> Powered by Gemini 2.0 Flash
+                      <Sparkles className="w-2.5 h-2.5" /> Powered by Gemini 2.5 Flash
                     </span>
                     {aiInsights?.generatedAt && (
                       <span className="text-[9px] font-mono text-dust">
