@@ -80,7 +80,7 @@ A guided quest is built into the sidebar. Here is how to walk through the entire
 ## How It Works Under the Hood
 
 ### The 5-Stage Pipeline
-- **Stage 1 (Vision Classifier):** Uses Gemini 2.5 Flash to extract structured categories, descriptions, and ratings.
+- **Stage 1 (Vision Classifier):** Uses Gemini 3.5 Flash to extract structured categories, descriptions, and ratings.
 - **Stage 2 (Geo-Context):** Checks a 200m radius of coordinates to prevent redundant logs.
 - **Stage 3 (Validation):** Simulated notifications broadcast to nearby nodes, requiring upvotes to verify.
 - **Stage 4 (Routing & SLA):** Priority score calculated as `Severity * log2(Confirmations + 1)`. Sets 24h SLA for critical ($\ge 8$), 72h for high ($\ge 5$).
