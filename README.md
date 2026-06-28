@@ -14,6 +14,58 @@ CivSight is an **Autonomous AI Multi-Agent Civic Infrastructure Management Syste
 
 ---
 
+## 📸 Application Screenshots
+
+To showcase the high-fidelity user interface and full system capabilities, we have compiled a sequence of 8 screenshots showing the application's end-to-end workflows. Place your captured images inside the `assets/` folder using these exact filenames:
+
+### 🗺️ Phase 1: Citizen Discovery & Dynamic Map Reporting
+<div align="center">
+  <img src="assets/1_map_workspace.png" alt="CivSight Dynamic Map Layout" width="800px" />
+  <p><em><strong>1. Interactive Ward 7 Map:</strong> Plotting live reported incidents with custom status-colored pins and dynamic filters on a beautiful fallback vector layout.</em></p>
+  
+  <br/>
+  
+  <img src="assets/2_agent_triage_pipeline.png" alt="5-Stage Active Agent Pipeline" width="800px" />
+  <p><em><strong>2. Autonomous Multi-Agent Pipeline:</strong> Real-time streaming logs detailing the 5-stage automated classification, scoring, geofenced de-duplication, and dispatch sequences.</em></p>
+</div>
+
+### 🛠️ Phase 2: SLA Tracking & Dispatch Optimization
+<div align="center">
+  <img src="assets/3_sla_incident_details.png" alt="Incident SLA details sliding drawer" width="800px" />
+  <p><em><strong>3. Live Ticking SLA Countdown:</strong> Non-blocking slide-over side drawer showing real-time ticking SLA deadlines, user validation controls, geocoded addresses, and chronological audit histories.</em></p>
+  
+  <br/>
+  
+  <img src="assets/4_field_ops_routing.png" alt="Field Crew Routing with TSP sequence" width="800px" />
+  <p><em><strong>4. Dynamic Field Crew Route Sequence:</strong> Field Operator workstation automatically sorting and sequencing assigned repair works using a Nearest-Neighbor Traveling Salesperson Problem (TSP) algorithm starting from the local station.</em></p>
+</div>
+
+### 🔍 Phase 3: Gemini AI Quality Auditing
+<div align="center">
+  <img src="assets/5_ai_visual_verification.png" alt="Gemini dual-image verification portal" width="800px" />
+  <p><em><strong>5. Multimodal Before-After Visual Inspection:</strong> On-site verification portal requiring work proof. Gemini Vision compares before and after repair images side-by-side, protecting against fraud or duplicate photos.</em></p>
+</div>
+
+### 📊 Phase 4: Administrative Command Console
+<div align="center">
+  <img src="assets/6_admin_dashboard_insights.png" alt="AI City Intelligence Summary" width="800px" />
+  <p><em><strong>6. Executive City Intelligence:</strong> High-level command console displaying automated live city briefings, risk summaries, priority recommendations, and real-time department performance grades.</em></p>
+  
+  <br/>
+  
+  <img src="assets/7_predictive_alerts_hotspots.png" alt="Admin SLA performance and hotspots" width="800px" />
+  <p><em><strong>7. Predictive Hotspot Anomalies & SLA Charts:</strong> Dynamic performance graphs showcasing resolution rates alongside predictive clustering alerts highlighting pipe ruptures and pothole clusters.</em></p>
+</div>
+
+### 🏆 Phase 5: Gamified Civic Engagement
+<div align="center">
+  <img src="assets/8_citizen_profile_gamification.png" alt="Citizen profile and leaderboards" width="800px" />
+  <p><em><strong>8. Ward 7 Citizen Standings & Profile:</strong> Citizen portal showing earned XP points, level rankings, and visual civic achievement badges (e.g., Pothole Patrol, Water Guardian) to incentivize reporting and duplicate checking.</em></p>
+</div>
+
+
+---
+
 ## 🤖 The 5-Agent Collaborative Pipeline
 CivSight replaces manual city operations with a sequence of specialized AI agents running in series to handle each reported issue:
 
@@ -52,7 +104,7 @@ graph TD
 *   **Interactive RAG Assistant:** An AI Assistant loaded with live city metrics allowing administrators and citizens to query municipal databases naturally.
 *   **Gamified Civic Ledger:** Citizen leaderboard tracking earned XP and badges (e.g., *Pothole Patrol*, *Water Guardian*, *Civic Leader*) for reports and duplicate confirmations.
 
----
+
 
 ## 🛠️ Tech Stack & Google Technologies
 *   **Frameworks:** React (v19), Express, TypeScript (v5.8), Vite (v6), esbuild.
@@ -65,6 +117,24 @@ graph TD
 *   **Google Maps JavaScript API:** Geocoding coordinates, Heatmap visualization layers, and dynamic marker styling.
 *   **Database:** Firebase Firestore integration with a robust local storage caching adapter.
 *   **Hosting:** Google Cloud Run (Docker-based containerized serverless hosting).
+
+---
+
+## 📂 Repository Structure
+```bash
+CivSight/
+├── assets/                     # High-fidelity workflow screenshots
+├── public/                     # Static configurations and manifest definitions
+├── src/
+│   ├── App.tsx                 # Core React app with Views, routing & live state synchronization
+│   ├── index.css               # Global Tailwind CSS definitions & custom theme configuration
+│   └── main.tsx                # Client-side entry point
+├── server.ts                   # Express.js backend serving as secure proxy for Gemini & Firestore
+├── .env.example                # Sample environment configurations
+├── package.json                # Project dependencies and deployment build scripts
+├── tsconfig.json               # TypeScript path and configuration options
+└── vite.config.ts              # Vite configuration and compiler definitions
+```
 
 ---
 
@@ -97,43 +167,14 @@ graph TD
     ```
     Open [http://localhost:3000](http://localhost:3000) in your browser.
 
----
-
-## ☁️ Reflecting Changes in the Live URL (Redeploying)
-
-The application is deployed on **Google Cloud Run** using the **Google AI Studio Deploy** system. If you modify the codebase, follow these steps to deploy updates:
-
-### Method A: Git Integration (Recommended)
-If your GitHub repository is connected to the Cloud Run service via Cloud Build triggers:
-1.  Commit and push your changes to your GitHub repository:
-    ```bash
-    git add .
-    git commit -m "feat: enhance UI aesthetics and update docs"
-    git push origin main
-    ```
-2.  Cloud Build will automatically trigger, compile the React assets with Vite, bundle the Express server with esbuild, build the Docker container, and deploy it as a new immutable revision to Cloud Run.
-
-### Method B: Manual Redeployment via Google AI Studio Console
-1.  Log in to [Google AI Studio](https://ai.studio/).
-2.  Navigate to your deployed applications panel and select your project (`CivSight` - ID: `46dce0e2-cfa0-4f4d-bb0f-2d19889ad657`).
-3.  Click the **Deploy / Redeploy** button (rocket icon) to rebuild the live service from the connected GitHub branch.
-
-### Method C: Manual gcloud CLI Deployment
-If you have the Google Cloud SDK set up:
-```bash
-gcloud run deploy civsight --source . --region asia-southeast1 --allow-unauthenticated
-```
-
----
 
 ## 📊 Hackathon Evaluation Matrix Alignment
 
-| Evaluation Criteria | Weight | How CivSight Excels |
-| :--- | :---: | :--- |
-| **Problem Solving & Impact** | 20% | Combats civic backlogs. The geo-spatial merging prevents redundant crew dispatches, and automatic triage speeds routing by over 32%. |
-| **Agentic Depth** | 20% | Orchestrates a cooperative pipeline of 5 specialized agents that share state, update Firestore collections, and log real-time thoughts. |
-| **Innovation & Creativity** | 20% | Introduces **Dual-Image AI verification** to inspect visual repair quality, incorporating anti-fraud heuristics to check proof of work. |
-| **Usage of Google Tech** | 15% | Powered by `@google/genai` (Gemini 3.5 Flash) for multimodal classification, RAG chat, and insights. Uses Google Maps JS SDK for geocoding and heatmaps. Hosted on GCP. |
-| **Product Experience** | 10% | Premium Brutalist Flat design with smooth interactions, custom icons, sidebar incident dossiers, and clear desktop/mobile layouts. |
-| **Technical Implementation** | 10% | Clean separation of Express API routes and React views. Built-in LocalStorage cache wrapper ensuring robust operation if Firestore is empty. |
-| **Completeness & Usability** | 5% | Zero-configuration needed. Fully seeded with rich simulated cases on Ashok Marg, MI Road, and Raja Park, making it immediately reviewable by judges. |
+*   **Problem Solving & Impact (Weight: 20%):** Combats civic backlogs. The geo-spatial merging prevents redundant crew dispatches, and automatic triage speeds routing by over 32%.
+*   **Agentic Depth (Weight: 20%):** Orchestrates a cooperative pipeline of 5 specialized agents that share state, update Firestore collections, and log real-time thoughts.
+*   **Innovation & Creativity (Weight: 20%):** Introduces **Dual-Image AI verification** to inspect visual repair quality, incorporating anti-fraud heuristics to check proof of work.
+*   **Usage of Google Tech (Weight: 15%):** Powered by `@google/genai` (Gemini 3.5 Flash) for multimodal classification, RAG chat, and insights. Uses Google Maps JS SDK for geocoding and heatmaps. Hosted on GCP.
+*   **Product Experience (Weight: 10%):** Premium Brutalist Flat design with smooth interactions, custom icons, sidebar incident dossiers, and clear desktop/mobile layouts.
+*   **Technical Implementation (Weight: 10%):** Clean separation of Express API routes and React views. Built-in LocalStorage cache wrapper ensuring robust operation if Firestore is empty.
+*   **Completeness & Usability (Weight: 5%):** Zero-configuration needed. Fully seeded with rich simulated cases on Ashok Marg, MI Road, and Raja Park, making it immediately reviewable by judges.
+
