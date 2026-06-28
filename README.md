@@ -10,7 +10,6 @@ CivSight is an **Autonomous AI Multi-Agent Civic Infrastructure Management Syste
 
 ## 🚀 Deployed URL & Project Links
 *   **Live Web App:** [https://civsight-877916514223.asia-southeast1.run.app/](https://civsight-877916514223.asia-southeast1.run.app/)
-*   **AI Studio Project Console:** [https://ai.studio/apps/46dce0e2-cfa0-4f4d-bb0f-2d19889ad657](https://ai.studio/apps/46dce0e2-cfa0-4f4d-bb0f-2d19889ad657)
 *   **Google Doc Submission File:** [PROJECT_DESCRIPTION.md](PROJECT_DESCRIPTION.md)
 
 ---
