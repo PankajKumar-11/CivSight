@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#18181B" rx="12" />
+  
+  <!-- Browser Chrome -->
+  <rect width="800" height="40" fill="#09090B" rx="12" />
+  <circle cx="20" cy="20" r="6" fill="#EF4444" />
+  <circle cx="40" cy="20" r="6" fill="#F59E0B" />
+  <circle cx="60" cy="20" r="6" fill="#10B981" />
+  <rect x="120" y="8" width="560" height="24" rx="6" fill="#27272A" />
+  <text x="400" y="24" fill="#A1A1AA" font-family="monospace" font-size="11" text-anchor="middle">https://civsight-app.run.app/ai-verification</text>
+  
+  <!-- Outer Title -->
+  <text x="30" y="80" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">🔍 Gemini Multimodal Visual Inspection</text>
+  <text x="30" y="98" fill="#71717A" font-family="system-ui, sans-serif" font-size="11">Automated Before/After Repair Alignment Audit</text>
+  
+  <!-- Image Frame Container (Left: Before, Right: After) -->
+  <rect x="25" y="115" width="750" height="250" fill="#09090B" rx="8" stroke="#27272A" stroke-width="1.5" />
+  
+  <!-- Left Side: BEFORE -->
+  <g opacity="0.85">
+    <!-- Faux Camera frame -->
+    <rect x="40" y="130" width="340" height="200" fill="#27272A" rx="6" />
+    <!-- Asphalt ground -->
+    <rect x="40" y="220" width="340" height="110" fill="#4B5563" />
+    <!-- Pothole illustration (craggy cracked shapes) -->
+    <path d="M 120 250 Q 150 280 180 250 T 220 280 T 280 240 Z" fill="#1F2937" stroke="#111827" stroke-width="4" />
+    <path d="M 150 260 L 160 270 M 200 265 L 195 275 M 240 250 L 250 265" stroke="#111827" stroke-width="2" />
+    
+    <!-- Red Alert Badge -->
+    <rect x="50" y="140" width="120" height="24" rx="12" fill="#EF4444" />
+    <circle cx="62" cy="152" r="5" fill="#FAFAFA" />
+    <text x="76" y="156" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">BEFORE: POTHOLE</text>
+  </g>
+  
+  <!-- Right Side: AFTER -->
+  <g>
+    <!-- Faux Camera frame -->
+    <rect x="420" y="130" width="340" height="200" fill="#27272A" rx="6" />
+    <!-- Asphalt ground (clean, patched) -->
+    <rect x="420" y="220" width="340" height="110" fill="#4B5563" />
+    <!-- Patched asphalt overlay (shows the repair circle) -->
+    <ellipse cx="580" cy="265" rx="70" ry="25" fill="#374151" stroke="#1F2937" stroke-width="2" stroke-dasharray="4,2" />
+    <text x="580" y="268" fill="#9CA3AF" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">FRESH ASPHALT PATCH</text>
+    
+    <!-- Green Complete Badge -->
+    <rect x="430" y="140" width="120" height="24" rx="12" fill="#10B981" />
+    <path d="M 440 152 L 443 155 L 448 149" stroke="#FAFAFA" stroke-width="2" fill="none" />
+    <text x="456" y="156" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">AFTER: RESOLVED</text>
+  </g>
+  
+  <!-- Scanning / Alignment Guideline (Gemini Laser Line) -->
+  <line x1="400" y1="115" x2="400" y2="365" stroke="#3B82F6" stroke-width="3" />
+  <line x1="400" y1="115" x2="400" y2="365" stroke="#60A5FA" stroke-width="1" />
+  <!-- Scanner box -->
+  <rect x="365" y="220" width="70" height="30" rx="6" fill="#3B82F6" />
+  <text x="400" y="238" fill="#FAFAFA" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">SCANNING</text>
+  
+  <!-- Audit Results Display Footer -->
+  <rect x="25" y="380" width="750" height="50" rx="8" fill="#09090B" stroke="#10B981" stroke-width="1.5" />
+  <circle cx="50" cy="405" r="10" fill="#10B981" />
+  <path d="M 46 405 L 49 408 L 54 402" stroke="#FAFAFA" stroke-width="2" fill="none" />
+  <text x="75" y="402" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">AUDIT REPORT: WORK VERIFIED SUCCESSFUL</text>
+  <text x="75" y="418" fill="#10B981" font-family="system-ui, sans-serif" font-size="11">Gemini AI verification score: 99.8% match on structural context alignment. No duplicate/stale metadata detected.</text>
+  
+  <!-- Floating Vision Badge -->
+  <rect x="635" y="388" width="130" height="34" rx="6" fill="#1E1B4B" stroke="#4F46E5" stroke-width="1" />
+  <text x="700" y="409" fill="#C7D2FE" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">Powered by Gemini 3.5</text>
+</svg>
