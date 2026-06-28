@@ -1601,7 +1601,7 @@ export default function Home() {
     if (!issue) return;
 
     if (issue.confirmedBy.includes(currentUser.id)) {
-      alert("You have already confirmed/upvoted this issue!");
+      pushNotification("Already Verified", "You have already confirmed/upvoted this issue!", "warning");
       return;
     }
 
@@ -2042,7 +2042,7 @@ export default function Home() {
 
     const handleVerifyRepair = async (issue: Issue) => {
       if (!afterImageProof) {
-        alert("Please select a completed repair image as visual proof.");
+        pushNotification("Proof Required", "Please select a completed repair image as visual proof.", "warning");
         return;
       }
       setIsVerifyingRepair(true);
