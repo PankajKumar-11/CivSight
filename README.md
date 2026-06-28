@@ -16,50 +16,50 @@ CivSight is an **Autonomous AI Multi-Agent Civic Infrastructure Management Syste
 
 ## 📸 Application Screenshots
 
-To showcase the high-fidelity user interface and full system capabilities, we have compiled a sequence of 8 vector mockup screenshots showing the application's end-to-end workflows. Place your captured images inside the `assets/` folder using these exact filenames:
+To showcase the high-fidelity user interface and full system capabilities, we have compiled a sequence of 8 screenshots showing the application's end-to-end workflows. Place your captured images inside the `assets/` folder using these exact filenames:
 
 ### 🗺️ Phase 1: Citizen Discovery & Dynamic Map Reporting
 <div align="center">
-  <img src="assets/1_map_workspace.svg" alt="CivSight Dynamic Map Layout" width="800px" />
+  <img src="assets/1_map_workspace.png" alt="CivSight Dynamic Map Layout" width="800px" />
   <p><em><strong>1. Interactive Ward 7 Map:</strong> Plotting live reported incidents with custom status-colored pins and dynamic filters on a beautiful fallback vector layout.</em></p>
   
   <br/>
   
-  <img src="assets/2_agent_triage_pipeline.svg" alt="5-Stage Active Agent Pipeline" width="800px" />
+  <img src="assets/2_agent_triage_pipeline.png" alt="5-Stage Active Agent Pipeline" width="800px" />
   <p><em><strong>2. Autonomous Multi-Agent Pipeline:</strong> Real-time streaming logs detailing the 5-stage automated classification, scoring, geofenced de-duplication, and dispatch sequences.</em></p>
 </div>
 
 ### 🛠️ Phase 2: SLA Tracking & Dispatch Optimization
 <div align="center">
-  <img src="assets/3_sla_incident_details.svg" alt="Incident SLA details sliding drawer" width="800px" />
+  <img src="assets/3_sla_incident_details.png" alt="Incident SLA details sliding drawer" width="800px" />
   <p><em><strong>3. Live Ticking SLA Countdown:</strong> Non-blocking slide-over side drawer showing real-time ticking SLA deadlines, user validation controls, geocoded addresses, and chronological audit histories.</em></p>
   
   <br/>
   
-  <img src="assets/4_field_ops_routing.svg" alt="Field Crew Routing with TSP sequence" width="800px" />
+  <img src="assets/4_field_ops_routing.png" alt="Field Crew Routing with TSP sequence" width="800px" />
   <p><em><strong>4. Dynamic Field Crew Route Sequence:</strong> Field Operator workstation automatically sorting and sequencing assigned repair works using a Nearest-Neighbor Traveling Salesperson Problem (TSP) algorithm starting from the local station.</em></p>
 </div>
 
 ### 🔍 Phase 3: Gemini AI Quality Auditing
 <div align="center">
-  <img src="assets/5_ai_visual_verification.svg" alt="Gemini dual-image verification portal" width="800px" />
+  <img src="assets/5_ai_visual_verification.png" alt="Gemini dual-image verification portal" width="800px" />
   <p><em><strong>5. Multimodal Before-After Visual Inspection:</strong> On-site verification portal requiring work proof. Gemini Vision compares before and after repair images side-by-side, protecting against fraud or duplicate photos.</em></p>
 </div>
 
 ### 📊 Phase 4: Administrative Command Console
 <div align="center">
-  <img src="assets/6_admin_dashboard_insights.svg" alt="AI City Intelligence Summary" width="800px" />
+  <img src="assets/6_admin_dashboard_insights.png" alt="AI City Intelligence Summary" width="800px" />
   <p><em><strong>6. Executive City Intelligence:</strong> High-level command console displaying automated live city briefings, risk summaries, priority recommendations, and real-time department performance grades.</em></p>
   
   <br/>
   
-  <img src="assets/7_predictive_alerts_hotspots.svg" alt="Admin SLA performance and hotspots" width="800px" />
+  <img src="assets/7_predictive_alerts_hotspots.png" alt="Admin SLA performance and hotspots" width="800px" />
   <p><em><strong>7. Predictive Hotspot Anomalies & SLA Charts:</strong> Dynamic performance graphs showcasing resolution rates alongside predictive clustering alerts highlighting pipe ruptures and pothole clusters.</em></p>
 </div>
 
 ### 🏆 Phase 5: Gamified Civic Engagement
 <div align="center">
-  <img src="assets/8_citizen_profile_gamification.svg" alt="Citizen profile and leaderboards" width="800px" />
+  <img src="assets/8_citizen_profile_gamification.png" alt="Citizen profile and leaderboards" width="800px" />
   <p><em><strong>8. Ward 7 Citizen Standings & Profile:</strong> Citizen portal showing earned XP points, level rankings, and visual civic achievement badges (e.g., Pothole Patrol, Water Guardian) to incentivize reporting and duplicate checking.</em></p>
 </div>
 
